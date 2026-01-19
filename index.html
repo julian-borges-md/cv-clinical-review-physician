@@ -1,0 +1,675 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Julian Y. V. Borges, MD, MS | Clinical Review Physician | Clinical Governance and Medical Decision Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+
+    body { margin: 0; padding: 0; }
+
+    .page {
+      max-width: 1120px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 0.75rem;
+    }
+
+    h1, h2, h3, h4 { margin-top: 0; color: #111827; }
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+    }
+    h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+    p { margin: 0.5rem 0; }
+
+    .muted { color: #6b7280; font-size: 0.95rem; }
+    .small { font-size: 0.92rem; }
+
+    /* ================= HEADER (TOP ROW) ================= */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.25rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 1rem;
+      margin-bottom: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .header-left { flex: 1 1 780px; min-width: 320px; }
+    .header-right { display: none; }
+
+    .header-identity {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .header-identity-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .profile-photo {
+      width: auto;
+      height: 100%;
+      min-height: 176px;
+      max-height: 240px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      flex: 0 0 auto;
+      margin-top: 10px;
+    }
+
+    .tagline {
+      margin-top: 0.25rem;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .tertiary {
+      margin-top: 0.15rem;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #eef2ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      color: #3730a3;
+      text-decoration: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .badge-icon {
+      width: 0.95rem;
+      height: 0.95rem;
+      display: inline-block;
+      vertical-align: middle;
+      flex: 0 0 auto;
+    }
+
+    /* ================= CONTACT BOX (FULL WIDTH) ================= */
+    .contact-wide {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      background: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-wide-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem 1rem;
+      align-items: start;
+    }
+
+    .contact-wide-item .label {
+      color: #6b7280;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .contact-wide-item .value {
+      margin-top: 0.15rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .contact-wide-item .value .small {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .contact-wide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .contact-wide-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ================= KEYWORDS BOX (VISIBLE, FULL WIDTH) ================= */
+    .keywords-frame {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      background: #ffffff;
+      margin-top: 0.85rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      justify-content: flex-start;
+    }
+
+    .pill-list li {
+      background: #f9fafb;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    /* ================= CARDS / GRIDS ================= */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background: #ffffff;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .header-identity { flex-direction: column; align-items: flex-start; }
+      .profile-photo {
+        width: 160px;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        margin-top: 0;
+      }
+    }
+
+    .item { margin-bottom: 1rem; }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: baseline;
+    }
+    .item-title { font-weight: 800; }
+    .item-meta { font-size: 0.92rem; color: #6b7280; }
+
+    ul { margin-top: 0.4rem; padding-left: 1.1rem; }
+    li { margin-bottom: 0.35rem; }
+
+    a { color: #2563eb; text-decoration: none; }
+    a, .badge {
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease, opacity 160ms ease;
+      will-change: transform;
+    }
+    a:hover { text-decoration: underline; transform: translateY(-1px); }
+    a:active { transform: translateY(0px); opacity: 0.95; }
+    a:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+      border-radius: 0.4rem;
+    }
+    .badge:hover {
+      transform: translateY(-1px) scale(1.04);
+      box-shadow: 0 10px 18px rgba(17, 24, 39, 0.10);
+      background: #e0e7ff;
+      text-decoration: none;
+    }
+    .badge:active {
+      transform: translateY(0px) scale(0.99);
+      box-shadow: 0 6px 10px rgba(17, 24, 39, 0.08);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      a, .badge { transition: none !important; }
+      a:hover, .badge:hover { transform: none !important; box-shadow: none !important; }
+    }
+
+    .kpi {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 0.9rem;
+      background: #f9fafb;
+      height: 100%;
+    }
+    .kpi .kpi-title { font-weight: 800; margin-bottom: 0.15rem; }
+    .kpi .kpi-text { color: #374151; font-size: 0.95rem; }
+
+    .subheading { font-weight: 800; margin-top: 1rem; margin-bottom: 0.35rem; }
+
+    @media print {
+      :root { background: #ffffff; }
+      .page {
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        max-width: none;
+        padding: 0.75in;
+      }
+      a { color: #111827; text-decoration: none; }
+      .badge { border: 1px solid #d1d5db; background: #ffffff; color: #111827; box-shadow: none; }
+      .kpi { background: #ffffff; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="header">
+      <div class="header-left">
+        <div class="header-identity">
+          <img src="assets/profile.jpg" alt="Julian Y. V. Borges" class="profile-photo" />
+
+          <div class="header-identity-text">
+            <h1>Julian Y. V. Borges, MD, MS</h1>
+
+            <div class="tagline">Physician | Clinical Review | Medical Decision Support | Clinical Governance</div>
+            <div class="tertiary">Evidence based review · Guideline driven decision making · Quality and utilization workflows</div>
+
+            <p class="muted small">
+              Physician with extensive experience in clinical decision making, research rigor, and governance focused execution. I support high quality,
+              guideline driven medical review through consistent documentation assessment, clinical criteria application, and escalation management.
+              My work emphasizes accuracy, speed, defensibility, and patient safety within regulated healthcare environments.
+            </p>
+
+            <div class="badge-row" aria-label="Key identity links">
+              <a class="badge" href="https://orcid.org/0009-0001-9929-3135" target="_blank" rel="noopener">ORCID</a>
+
+              <a class="badge" href="https://www.linkedin.com/in/julian-borges-md/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg class="badge-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.476-.9 1.637-1.85 3.368-1.85 3.6 0 4.266 2.368 4.266 5.455v6.286zM5.337 7.433A2.062 2.062 0 0 1 3.27 5.37c0-1.14.925-2.067 2.067-2.067 1.141 0 2.066.926 2.066 2.067 0 1.141-.925 2.063-2.066 2.063zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+
+              <a class="badge" href="https://github.com/julian-borges-md" target="_blank" rel="noopener">GitHub</a>
+
+              <a class="badge" href="https://x.com/julianborgesmd" target="_blank" rel="noopener" aria-label="X">
+                <svg class="badge-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.7l-5.2-6.5L5.7 22H2.6l7.4-8.5L1 2h6.8l4.7 6.1L18.9 2zm-1.2 18h1.7L7.1 3.9H5.3L17.7 20z"></path>
+                </svg>
+              </a>
+
+              <a class="badge" href="https://dataverse.harvard.edu/dataverse/julian_borges" target="_blank" rel="noopener">Harvard Dataverse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="contact-wide" aria-label="Contact and identifiers">
+      <div class="contact-wide-grid">
+        <div class="contact-wide-item">
+          <div class="label">Location</div>
+          <div class="value">Massachusetts, United States</div>
+        </div>
+
+        <div class="contact-wide-item">
+          <div class="label">Primary email</div>
+          <div class="value">
+            <a href="mailto:jyborges@bu.edu">jyborges@bu.edu</a>
+            <span class="small muted">Alternative: <a href="mailto:fxmedbrasil@gmail.com">fxmedbrasil@gmail.com</a></span>
+          </div>
+        </div>
+
+        <div class="contact-wide-item">
+          <div class="label">Other IDs</div>
+          <div class="value">
+            <div class="small">
+              Scopus Author ID:
+              <a href="http://www.scopus.com/inward/authorDetails.url?authorID=59247184100&partnerID=MN8TOARS" target="_blank" rel="noopener">59247184100</a>
+            </div>
+            <div class="small">
+              SciProfiles:
+              <a href="https://sciprofiles.com/profile/3701785" target="_blank" rel="noopener">3701785</a>
+            </div>
+            <div class="small">
+              ResearcherID:
+              <a href="https://www.webofscience.com/wos/author/record/KVZ-2689-2024" target="_blank" rel="noopener">KVZ-2689-2024</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-wide-item">
+          <div class="label">Core methods and tooling</div>
+          <div class="value">Clinical criteria interpretation, documentation review, Python, R, Stata, SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="keywords-frame" aria-label="Keywords">
+      <ul class="pill-list">
+        <li>Clinical Review</li>
+        <li>Medical Decision Support</li>
+        <li>Evidence Based Medicine</li>
+        <li>Guideline Driven Care</li>
+        <li>Utilization Management</li>
+        <li>Medical Necessity</li>
+        <li>Quality Assurance</li>
+        <li>Peer Review</li>
+        <li>Clinical Documentation Integrity</li>
+        <li>Risk and Safety</li>
+        <li>Clinical Governance</li>
+        <li>Digital Health</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>Role Aligned Summary</h2>
+      <div class="card">
+        <div class="grid-2" aria-label="Role alignment highlights">
+          <div class="kpi">
+            <div class="kpi-title">Clinical decision consistency at scale</div>
+            <div class="kpi-text">Structured review approach that supports defensible decisions, appropriate escalation, and consistent criteria application.</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-title">Regulated workflow readiness</div>
+            <div class="kpi-text">Comfort operating in high volume environments with strong documentation standards, auditability expectations, and quality controls.</div>
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-bottom:0;">
+          Note: International medical graduate. Medical credentials verified through primary source verification processes. United States medical licensure pathway in progress.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research and Leadership Summary</h2>
+      <div class="card">
+        <p>
+          I am a clinician scientist and endocrinologist with more than 23 years of experience at the intersection of medicine, data science, and translational research.
+          As Founder and CEO of FXMEDUS LLC, I lead initiatives integrating health informatics, computational biology, and artificial intelligence to design scalable solutions
+          for metabolic and aging related diseases. Flagship platforms such as MitoCoreX and DrugSynthAI apply multi agent architectures, reinforcement learning, and in silico
+          experimentation for compound generation, biomarker discovery, and mitochondrial therapeutics research.
+        </p>
+
+        <div class="grid-2" aria-label="Research focus">
+          <div class="kpi">
+            <div class="kpi-title">Clinical governance and reproducibility</div>
+            <div class="kpi-text">Auditability, evaluation discipline, data governance, and interoperability oriented infrastructure for safer translation to care.</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-title">Analytics and decision quality</div>
+            <div class="kpi-text">Measurement, confounding awareness, and outcomes framing that supports high quality decisions in real operational settings.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Employment</h2>
+      <div class="card">
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">FxMEDUS LLC | Founder, CEO, Chief Scientist</div>
+            <div class="item-meta">North Miami, Florida, United States | 2024 to present</div>
+          </div>
+          <p class="small muted">Digital transformation, digital health, clinical informatics research.</p>
+          <ul>
+            <li>Advise on clinical governance for digital health and AI enabled workflows, emphasizing safety, auditability, and adoption.</li>
+            <li>Develop evaluation frameworks that translate clinical intent into measurable criteria and operational decision rules.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">Afya Medical Post Graduation Institute | Associate Professor of Medicine</div>
+            <div class="item-meta">Goiânia, Goiás, Brazil | 2022 to present</div>
+          </div>
+          <p class="small muted">Endocrinology, diabetes, and metabolism.</p>
+        </div>
+
+        <div class="item" style="margin-bottom:0;">
+          <div class="item-header">
+            <div class="item-title">FxMED, Medicina Funcional | Staff Physician and Medical Director</div>
+            <div class="item-meta">Goiânia, Goiás, Brazil | 2011 to present</div>
+          </div>
+          <p class="small muted">Endocrinology and clinical nutrition.</p>
+          <ul>
+            <li>Lead clinical decision making and care planning for complex chronic disease management.</li>
+            <li>Establish practice level quality standards and documentation expectations for consistent care delivery.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education and Qualifications</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="subheading">Graduate and Certificate Training</div>
+          <ul>
+            <li>Boston University | MS Health Informatics (Data Analytics) candidate | 2025 to 2027</li>
+            <li>Harvard Medical School | Global Clinical Scholars Research Training, Genetic Epidemiology elective (GCSRT) | 2024 to 2025</li>
+            <li>UC San Diego | Drug discovery, development, and product management specialization | 2025</li>
+            <li>Northeastern University | Health informatics for healthcare professionals certificate | 2025</li>
+            <li>Johns Hopkins | Clinical informatics specialization | 2025</li>
+            <li>Johns Hopkins | Bioinformatics, Python for genomic data science certificate | 2025</li>
+            <li>NIH OCRECO | Principles and Practices of Clinical Pharmacology (IPCP) | 2025</li>
+            <li>NIH OCRECO | Principles and Practices of Clinical Research (IPCR) | 2024</li>
+            <li>HarvardX via edX | AI and machine learning with R and Python, statistics and R, Python for research | 2024</li>
+            <li>Pontifícia Universidade Católica de Goiás | Medical genetics masters program | 2015 to 2016</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="subheading">Medical Training and Board Certification</div>
+          <ul>
+            <li>Centro Universitário Serra dos Órgãos | Doctor of Medicine MD | 1996 to 2002</li>
+            <li>Endocrinology, diabetes and metabolism | Board certification (SBEM/CFM/AMB) | 2014</li>
+            <li>Clinical nutrition and nutrology | Board certification (ABRAN/CFM/AMB) | 2013 to 2014</li>
+            <li>Nutrology fellowship | 2012 to 2013</li>
+            <li>Endocrinology fellowship | 2011 to 2013</li>
+            <li>Medical biochemistry postgraduate program | 2006 to 2008</li>
+            <li>Exercise and sports medicine postgraduate program | 2003</li>
+          </ul>
+
+          <div class="subheading">Invited positions and distinctions</div>
+          <ul>
+            <li>Academic Editor | PLOS Digital Health | 2025 to present</li>
+            <li>Editor in Chief | International Journal of Epidemiology and Public Health Research | 2024 to present</li>
+            <li>Board certification in endocrinology and diabetes | distinction | 2014</li>
+            <li>Board certification in clinical nutrition | distinction | 2013</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Membership and Service</h2>
+      <div class="card">
+        <ul>
+          <li>American Physician Scientists Association | full member | 2024 to present</li>
+          <li>American Medical Informatics Association | member, clinical informatics | 2024 to present</li>
+          <li>American Medical Association | member | 2023 to present</li>
+          <li>Endocrine Society | full member | 2022 to present</li>
+          <li>American Society for Nutrition | full member | 2014 to present</li>
+          <li>ACSM | full member | 2010 to present</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Works and Research Outputs</h2>
+      <div class="card">
+        <p class="muted small" style="margin-top:0;">
+          This section is formatted for quick scanning by recruiters, collaborators, and review committees. Each link opens in a new tab.
+        </p>
+
+        <ul>
+          <li>
+            Auditing Shortcut Learning and Misclassification in AI Based Breast Cancer Genomic Subtyping (2026).
+            <a href="https://doi.org/10.1093/jamiaopen/ooaf177" target="_blank" rel="noopener">DOI:10.1093/jamiaopen/ooaf177</a>
+            <span class="muted small"> | Harvard Dataverse: </span>
+            <a href="https://doi.org/10.7910/dvn/baljnt" target="_blank" rel="noopener">DOI:10.7910/dvn/baljnt</a>
+          </li>
+
+          <li>
+            Multi Arm Bandit Governance for Clinical AI (software, Zenodo, 2026).
+            <a href="https://doi.org/10.5281/zenodo.18248285" target="_blank" rel="noopener">DOI:10.5281/zenodo.18248285</a>
+          </li>
+
+          <li>
+            Functional Foods and Nutraceuticals: Definitions and Health Benefits (book, 2025).
+            <a href="https://doi.org/10.54448/MSP.978-65-983826-2-9" target="_blank" rel="noopener">DOI:10.54448/MSP.978-65-983826-2-9</a>
+          </li>
+
+          <li>
+            Advancing Deep Learning Insights for Identifying Heart Disease in Diabetic Patients: A Data Mining Approach Using Logistic Regression and Random Forests (SSRN, 2025).
+            <a href="https://doi.org/10.2139/ssrn.5091734" target="_blank" rel="noopener">DOI:10.2139/ssrn.5091734</a>
+          </li>
+
+          <li>
+            Impact of Renal Function and Symptom Burden on Digoxin Efficacy and Safety: A Post Hoc Subgroup Analysis of the DIG Trial (Harvard Dataverse, dataset, 2025).
+            <a href="https://doi.org/10.7910/dvn/zhyhy5" target="_blank" rel="noopener">DOI:10.7910/dvn/zhyhy5</a>
+          </li>
+
+          <li>
+            Neuroplasticity Alterations Induced by Isotretinoin Use in RARA Gene Polymorphism is Associated with Increased Risk of Depression and Suicidal Ideation (systematic review and meta analysis, 2024).
+            <a href="https://doi.org/10.47363/JPSRR/2024(6)173" target="_blank" rel="noopener">DOI:10.47363/JPSRR/2024(6)173</a>
+          </li>
+        </ul>
+
+        <p class="muted small" style="margin-bottom:0;">
+          Peer review activity (summary): PLOS Digital Health (36), European Journal of Preventive Cardiology (7), European Heart Journal (2), Diabetes and Metabolic Syndrome (2), Nature Reviews (1), Journal of Advances in Medicine and Medical Research (1).
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-column">
+      <div>
+        <h2>Editorial Roles and Peer Review</h2>
+        <div class="card">
+          <div class="subheading">Editorial Roles</div>
+          <ul>
+            <li>Academic Editor, PLOS Digital Health</li>
+            <li>Editorial Board Member, International Journal of Diabetes and Endocrinology</li>
+            <li>Editorial Board Member, International Journal of Epidemiology and Public Health Research</li>
+          </ul>
+
+          <div class="subheading">Peer Review</div>
+          <p class="small">
+            Reviewer for journals including PLOS Digital Health, European Heart Journal Digital Health, Nature Reviews and European Journal of Preventive Cardiology, focused on clinical research rigor, digital health translation, and clinical analytics integrity.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Research Portfolio Themes</h2>
+        <div class="card">
+          <ul>
+            <li>Clinical research infrastructure and governance models enabling safe translation to care</li>
+            <li>Clinical AI governance, auditability, and deployment safety in real clinical environments</li>
+            <li>Applied analytics for cardiometabolic risk stratification and outcomes measurement</li>
+            <li>Genomic epidemiology and bioinformatics for translational inference and precision prevention</li>
+          </ul>
+
+          <div class="subheading">MitoCoreX Project, Principal Investigator</div>
+          <p class="small">
+            AI enabled discovery and development platform designed to optimize mitochondrial function through genomics aware targeting, multi agent systems, and in silico validation for aging related disease, neurodegeneration, and metabolic performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Professional Affiliations</h2>
+      <div class="card">
+        <ul>
+          <li>American Medical Informatics Association (AMIA)</li>
+          <li>American Medical Association (AMA)</li>
+          <li>Endocrine Society</li>
+          <li>American Society for Nutrition (ASN)</li>
+          <li>American College of Sports Medicine (ACSM)</li>
+          <li>American Physician Scientists Association (APSA)</li>
+          <li>American College of Physicians (ACP)</li>
+          <li>Brazilian Society of Endocrinology and Metabolism (SBEM)</li>
+          <li>Brazilian Medical Nutrition Association (ABRAN)</li>
+          <li>Brazilian Society of Sports Medicine (SBME)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Clinical Imaging Training</h2>
+      <div class="card">
+        <p class="small">
+          Completed structured programs in obstetric, transvaginal, internal medicine, and musculoskeletal ultrasound at FÉRTILE Diagnósticos,
+          an accredited SBUS teaching center in Goiânia, Brazil, including more than three hundred hours of theoretical and hands on training across obstetric,
+          gynecologic, abdominal, and musculoskeletal imaging.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Contact and Executive Collaboration</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:jyborges@bu.edu">jyborges@bu.edu</a></p>
+        <p><strong>Phone:</strong> +1 617 895 8403</p>
+        <p class="muted small">
+          Open to full time roles in clinical review, medical decision support, clinical governance, and quality oriented clinical operations, including contract to hire arrangements.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
